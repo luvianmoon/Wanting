@@ -1,0 +1,84 @@
+Last login: Thu Mar  7 18:32:57 on ttys000
+luvians-MacBook-Pro:~ luvianluvian$ ssh pi@192.168.1.67
+pi@192.168.1.67's password: 
+Linux raspberrypi 4.14.79-v7+ #1159 SMP Sun Nov 4 17:50:20 GMT 2018 armv7l
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu Mar  7 16:17:19 2019
+pi@raspberrypi:~ $ ython
+-bash: ython: command not found
+pi@raspberrypi:~ $ python
+Python 2.7.13 (default, Sep 26 2018, 18:42:22) 
+[GCC 6.3.0 20170516] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import phue
+>>> from phue import Bridge
+>>> b = Bridge('192.168.1.64')
+>>> b.get_api()
+{u'rules': {}, u'resourcelinks': {}, u'scenes': {u'IICkSu09hVpULbC': {u'picture': u'', u'group': u'1', u'name': u'Savanna sunset', u'appdata': {u'version': 1, u'data': u'2eq4i_r01_d15'}, u'lights': [u'1', u'2'], u'lastupdated': u'2019-03-05T11:53:19', u'recycle': False, u'version': 2, u'owner': u'CjvDahXtU4kI6wDxoQSh2X0DeUpA3M9WVC--04On', u'locked': False, u'type': u'GroupScene'}, u'6lHjQTG14wdWORT': {u'picture': u'', u'group': u'1', u'name': u'Tropical twilight', u'appdata': {u'version': 1, u'data': u'qxyN5_r01_d16'}, u'lights': [u'1', u'2'], u'lastupdated': u'2019-03-05T11:53:19', u'recycle': False, u'version': 2, u'owner': u'CjvDahXtU4kI6wDxoQSh2X0DeUpA3M9WVC--04On', u'locked': False, u'type': u'GroupScene'}, u'W0W6yFwUJ3ITqxY': {u'picture': u'', u'group': u'1', u'name': u'Spring blossom', u'appdata': {u'version': 1, u'data': u'bgk8s_r01_d18'}, u'lights': [u'1', u'2'], u'lastupdated': u'2019-03-05T11:53:19', u'recycle': False, u'version': 2, u'owner': u'CjvDahXtU4kI6wDxoQSh2X0DeUpA3M9WVC--04On', u'locked': False, u'type': u'GroupScene'}, u'syG5pmTwIVRKMHE': {u'picture': u'', u'group': u'1', u'name': u'Dimmed', u'appdata': {u'version': 1, u'data': u'DY6Ji_r01_d06'}, u'lights': [u'1', u'2'], u'lastupdated': u'2019-03-05T11:53:19', u'recycle': False, u'version': 2, u'owner': u'CjvDahXtU4kI6wDxoQSh2X0DeUpA3M9WVC--04On', u'locked': False, u'type': u'GroupScene'}, u'JtvZ0AgCG3lrTXS': {u'picture': u'', u'group': u'1', u'name': u'Bright', u'appdata': {u'version': 1, u'data': u'slWCF_r01_d05'}, u'lights': [u'1', u'2'], u'lastupdated': u'2019-03-05T11:53:19', u'recycle': False, u'version': 2, u'owner': u'CjvDahXtU4kI6wDxoQSh2X0DeUpA3M9WVC--04On', u'locked': False, u'type': u'GroupScene'}, u'L9Il7qKWwmRCVKC': {u'picture': u'', u'group': u'1', u'name': u'Energize', u'appdata': {u'version': 1, u'data': u'Neums_r01_d04'}, u'lights': [u'1', u'2'], u'lastupdated': u'2019-03-05T11:53:19', u'recycle': False, u'version': 2, u'owner': u'CjvDahXtU4kI6wDxoQSh2X0DeUpA3M9WVC--04On', u'locked': False, u'type': u'GroupScene'}, u'TLzgcw2N3gSsn5D': {u'picture': u'', u'group': u'1', u'name': u'Relax', u'appdata': {u'version': 1, u'data': u'wM25f_r01_d01'}, u'lights': [u'1', u'2'], u'lastupdated': u'2019-03-05T11:53:18', u'recycle': False, u'version': 2, u'owner': u'CjvDahXtU4kI6wDxoQSh2X0DeUpA3M9WVC--04On', u'locked': False, u'type': u'GroupScene'}, u'sdgxpSxo0iVwfJ5': {u'picture': u'', u'group': u'1', u'name': u'Concentrate', u'appdata': {u'version': 1, u'data': u'h714y_r01_d03'}, u'lights': [u'1', u'2'], u'lastupdated': u'2019-03-05T11:53:19', u'recycle': False, u'version': 2, u'owner': u'CjvDahXtU4kI6wDxoQSh2X0DeUpA3M9WVC--04On', u'locked': False, u'type': u'GroupScene'}, u'Agw5SVckRBty0zX': {u'picture': u'', u'group': u'1', u'name': u'Nightlight', u'appdata': {u'version': 1, u'data': u'Fh0N9_r01_d07'}, u'lights': [u'1', u'2'], u'lastupdated': u'2019-03-05T11:53:19', u'recycle': False, u'version': 2, u'owner': u'CjvDahXtU4kI6wDxoQSh2X0DeUpA3M9WVC--04On', u'locked': False, u'type': u'GroupScene'}, u'9fmJ8t29fAE54o9': {u'picture': u'', u'group': u'1', u'name': u'Read', u'appdata': {u'version': 1, u'data': u'sYam3_r01_d02'}, u'lights': [u'1', u'2'], u'lastupdated': u'2019-03-05T11:53:19', u'recycle': False, u'version': 2, u'owner': u'CjvDahXtU4kI6wDxoQSh2X0DeUpA3M9WVC--04On', u'locked': False, u'type': u'GroupScene'}, u'uohyHejd0HZ7uKP': {u'picture': u'', u'group': u'1', u'name': u'Arctic aurora', u'appdata': {u'version': 1, u'data': u'JKSm4_r01_d17'}, u'lights': [u'1', u'2'], u'lastupdated': u'2019-03-05T11:53:19', u'recycle': False, u'version': 2, u'owner': u'CjvDahXtU4kI6wDxoQSh2X0DeUpA3M9WVC--04On', u'locked': False, u'type': u'GroupScene'}}, u'lights': {u'1': {u'swversion': u'5.38.1.14919', u'name': u'Hue color lamp 1', u'swupdate': {u'state': u'noupdates', u'lastinstall': None}, u'uniqueid': u'00:17:88:01:02:06:1a:82-0b', u'capabilities': {u'control': {u'ct': {u'max': 500, u'min': 153}, u'colorgamut': [[0.0, 0.0], [0.0, 0.0], [0.0, 0.0]], u'mindimlevel': 2000, u'maxlumen': 800, u'colorgamuttype': u'other'}, u'streaming': {u'renderer': False, u'proxy': False}, u'certified': True}, u'productname': u'Hue color lamp', u'state': {u'on': False, u'hue': 14910, u'colormode': u'ct', u'effect': u'colorloop', u'alert': u'none', u'xy': [0.4596, 0.4105], u'reachable': False, u'mode': u'homeautomation', u'bri': 254, u'ct': 370, u'sat': 144}, u'manufacturername': u'Philips', u'config': {u'function': u'mixed', u'direction': u'omnidirectional', u'archetype': u'sultanbulb'}, u'type': u'Extended color light', u'modelid': u'LCT007'}, u'2': {u'swversion': u'5.38.1.14919', u'name': u'Hue color lamp 2', u'swupdate': {u'state': u'noupdates', u'lastinstall': None}, u'uniqueid': u'00:17:88:01:02:06:1c:68-0b', u'capabilities': {u'control': {u'ct': {u'max': 500, u'min': 153}, u'colorgamut': [[0.0, 0.0], [0.0, 0.0], [0.0, 0.0]], u'mindimlevel': 2000, u'maxlumen': 800, u'colorgamuttype': u'other'}, u'streaming': {u'renderer': False, u'proxy': False}, u'certified': True}, u'productname': u'Hue color lamp', u'state': {u'on': True, u'hue': 14910, u'colormode': u'ct', u'effect': u'none', u'alert': u'select', u'xy': [0.4596, 0.4105], u'reachable': True, u'mode': u'homeautomation', u'bri': 254, u'ct': 370, u'sat': 144}, u'manufacturername': u'Philips', u'config': {u'function': u'mixed', u'direction': u'omnidirectional', u'archetype': u'sultanbulb'}, u'type': u'Extended color light', u'modelid': u'LCT007'}}, u'groups': {u'1': {u'name': u'Room', u'lights': [u'1', u'2'], u'state': {u'any_on': True, u'all_on': False}, u'action': {u'on': True, u'hue': 14910, u'colormode': u'ct', u'effect': u'none', u'alert': u'select', u'xy': [0.4596, 0.4105], u'bri': 254, u'ct': 370, u'sat': 144}, u'recycle': False, u'sensors': [], u'type': u'Room', u'class': u'Living room'}}, u'schedules': {}, u'sensors': {u'1': {u'name': u'Daylight', u'config': {u'on': True, u'configured': False, u'sunriseoffset': 30, u'sunsetoffset': -30}, u'swversion': u'1.0', u'state': {u'daylight': None, u'lastupdated': u'none'}, u'manufacturername': u'Philips', u'type': u'Daylight', u'modelid': u'PHDL00'}}, u'config': {u'starterkitid': u'', u'portalconnection': u'connecting', u'whitelist': {u'9azDAYB9CNdhis4TxiuBwy3DOv01W-tdR7clAxnc': {u'last use date': u'1980-01-01T03:15:01', u'create date': u'1980-01-01T00:21:47', u'name': u'my_hue_app#wanting'}, u'CjvDahXtU4kI6wDxoQSh2X0DeUpA3M9WVC--04On': {u'last use date': u'2019-03-07T17:37:48', u'create date': u'1980-01-01T00:00:17', u'name': u'Hue 3#luvian'}, u'nKAMCGppPU3tpz9dwi4MI37JQ5HjWjc-PAZwDz1S': {u'last use date': u'1980-01-01T00:15:52', u'create date': u'1980-01-01T03:37:53', u'name': u'python_hue'}, u'8MNPWVQ8SoUXzDWzxCv7mGG-huYdqJLjtfphcVPz': {u'last use date': u'1980-01-01T00:02:06', u'create date': u'1980-01-01T00:02:06', u'name': u'Hue 3#luvian'}}, u'zigbeechannel': 15, u'timezone': u'Europe/London', u'gateway': u'192.168.1.254', u'modelid': u'BSB002', u'portalstate': {u'communication': u'disconnected', u'outgoing': False, u'signedon': False, u'incoming': False}, u'proxyaddress': u'none', u'datastoreversion': u'74', u'replacesbridgeid': None, u'swupdate2': {u'bridge': {u'state': u'noupdates', u'lastinstall': u'2019-03-05T11:52:15'}, u'lastchange': u'2019-03-05T11:52:48', u'checkforupdate': False, u'state': u'unknown', u'autoinstall': {u'on': False, u'updatetime': u'T14:00:00'}}, u'dhcp': True, u'localtime': u'1980-01-01T00:15:52', u'proxyport': 0, u'UTC': u'1980-01-01T00:15:52', u'factorynew': False, u'swupdate': {u'devicetypes': {u'bridge': False, u'sensors': [], u'lights': []}, u'url': u'', u'text': u'', u'checkforupdate': False, u'updatestate': 0, u'notify': True}, u'apiversion': u'1.28.0', u'mac': u'00:17:88:2a:65:57', u'linkbutton': False, u'bridgeid': u'001788FFFE2A6557', u'ipaddress': u'192.168.1.64', u'portalservices': True, u'name': u'Philips hue', u'swversion': u'1810251352', u'netmask': u'255.255.255.0', u'internetservices': {u'swupdate': u'disconnected', u'time': u'disconnected', u'remoteaccess': u'disconnected', u'internet': u'disconnected'}, u'backup': {u'status': u'idle', u'errorcode': 0}}}
+>>> b.set_light(2,'bri',100,transitiontime=1)
+[[{u'success': {u'/lights/2/state/transitiontime': 1}}, {u'success': {u'/lights/2/state/bri': 100}}]]
+>>> b.set_light(2,'on',10)
+No handlers could be found for logger "phue"
+[[{u'error': {u'type': 7, u'description': u'invalid value, 10}, for parameter, on', u'address': u'/lights/2/state/on'}}]]
+>>> b.set_light(2,'bri',254)
+[[{u'success': {u'/lights/2/state/bri': 254}}]]
+>>> b.set_light(2,'on',False)
+[[{u'success': {u'/lights/2/state/on': False}}]]
+>>> b.set_light(2,'bri',250)
+[[{u'error': {u'type': 201, u'description': u'parameter, bri, is not modifiable. Device is set to off.', u'address': u'/lights/2/state/bri'}}]]
+>>> b.set_light(2,'on',True)
+[[{u'success': {u'/lights/2/state/on': True}}]]
+>>> b.set_light(2,'bri',150)
+[[{u'success': {u'/lights/2/state/bri': 150}}]]
+>>> packet_write_wait: Connection to 192.168.1.67 port 22: Broken pipe
+luvians-MacBook-Pro:~ luvianluvian$ ssh pi@192.168.1.67
+pi@192.168.1.67's password: 
+Linux raspberrypi 4.14.79-v7+ #1159 SMP Sun Nov 4 17:50:20 GMT 2018 armv7l
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu Mar  7 16:53:28 2019 from 192.168.1.68
+pi@raspberrypi:~ $ python
+Python 2.7.13 (default, Sep 26 2018, 18:42:22) 
+[GCC 6.3.0 20170516] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import phue
+>>> from phue import Bridge
+>>> b = Bridge('192.168.1.64')
+>>> b.set_light(2,'bri',254)
+[[{u'success': {u'/lights/2/state/bri': 254}}]]
+>>> b.set_light(2,'sat',200)
+[[{u'success': {u'/lights/2/state/sat': 200}}]]
+>>> b.set_light(2,'xy',【0.191，0.03】）
+  File "<stdin>", line 1
+    b.set_light(2,'xy',【0.191，0.03】）
+                       ^
+SyntaxError: invalid syntax
+>>>  b.set_light(2,'xy',0.191，0.03）
+  File "<stdin>", line 1
+    b.set_light(2,'xy',0.191，0.03）
+    ^
+IndentationError: unexpected indent
+>>> b.set_light(2,'xy'， [0.4596, 0.4105]）
+  File "<stdin>", line 1
+    b.set_light(2,'xy'， [0.4596, 0.4105]）
+                      ^
+SyntaxError: invalid syntax
+>>>  b.set_light(2,'xy'： [0.4596, 0.4105]）
+  File "<stdin>", line 1
+    b.set_light(2,'xy'： [0.4596, 0.4105]）
+    ^
+IndentationError: unexpected indent
+>>> b.set_light(2, 'bri', 127)
+[[{u'success': {u'/lights/2/state/bri': 127}}]]
+
