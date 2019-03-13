@@ -1,6 +1,6 @@
 # Wanting
 
-A project to do...
+A voice activate artifact 
 
 - x
 - y
@@ -43,10 +43,31 @@ sudo raspi-config
 # Select Finish
 
 # Instructions for Voice Activity Detection Libraries
-# clone https://github.com/respeaker/mic_array
+#git clone https://github.com/respeaker/mic_array
 apt-get install portaudio19-dev
 pip install pyaudio
 pip install webrtcvad
 
+```
 
+### Notes
+
+```Shell
+
+pwd
+#打印当前工作目录
+
+ifconfig
+#当前所有网络接口;View and change the configuration of the network interfaces
+
+sudo apt install python-virtualenv
+#Resolve issues between Python and Linux with virtualenv
+
+history
+#check previous commands
+!数字
+#再次使用指令
+
+reboot
+#restart system
 ```
