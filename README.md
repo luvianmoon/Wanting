@@ -43,7 +43,10 @@ sudo raspi-config
 # Select Finish
 
 # Instructions for Voice Activity Detection Libraries
+# clone https://github.com/respeaker/mic_array
 apt-get install portaudio19-dev
 pip install pyaudio
 pip install webrtcvad
+
+
 ```
