@@ -18,10 +18,9 @@ A project to do...
 
 ### Libraries
 
-```bash
+```Shell
+# Instructions for Philips Hue
 pip install phue
-apt-get install portaudio19-dev
-pip install pyaudio
 
 # Instructions for Respeaker Libraries
 sudo apt-get update
@@ -44,4 +43,7 @@ sudo raspi-config
 # Select Finish
 
 # Instructions for Voice Activity Detection Libraries
+apt-get install portaudio19-dev
+pip install pyaudio
+pip install webrtcvad
 ```
