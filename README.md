@@ -1,6 +1,6 @@
 # Wanting
 
-A voice activate artifact 
+A voice activate artifact
 
 - x
 - y
@@ -70,4 +70,8 @@ history
 
 reboot
 #restart system
+
+#run mic_array
+cd mic_array/
+python vad_doa.py
 ```
