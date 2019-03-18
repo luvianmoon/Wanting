@@ -5,14 +5,8 @@ from mic_array import MicArray
 from pixel_ring import pixel_ring
 from phue import Bridge
 
-b = Bridge('192.168.1.64')
-b.connect()
 light = b.lights
-L1 = light[0]
-L2 = light[1]
-L1.brightness = 200
-L2.brightness = 0
-a = '1'
+
 
 RATE = 16000
 CHANNELS = 4
@@ -21,35 +15,37 @@ DOA_FRAMES = 200    # ms
 
 
 def main():
+
+light[0].brightness = 200
+light[1].brightness = 0
+
   while True:
     vad = webrtcvad.Vad(3)
-
     speech_count = 0
+    A = speech_count
     chunks = []
     doa_chunks = int(DOA_FRAMES / VAD_FRAMES)
 
     try:
         with MicArray(RATE, CHANNELS, RATE * VAD_FRAMES / 1000)  as mic:
-            L1 = light[0]
-            L2 = light[1]
             for chunk in mic.read_chunks():
                 # Use single channel audio to detect voice activity
                 if vad.is_speech(chunk[0::CHANNELS].tobytes(), RATE):
-                    speech_count += 1
+                    //speech_count += 1
                     sys.stdout.write('1')
-                else:
-                    #sys.stdout.write('0')
-                    pass
+                    if light[1].brightness <= 200:
 
-                if L1 <= 200:
-                  if a == speech_count:
-                    L1 -= 10
-                    L2 += 10
-                  else:
-                    L1 += 10
-                    L2 -= 10
-                else
-                    pass
+                        print(light[0].brightness)
+                        light[0].brightness -= 10
+                        light[1].brightness += 10
+
+
+                else:
+                    sys.stdout.write('0')
+                    if light[0].brightness <= 0:
+                        light[0].brightness += 10
+                        light[1].brightness -= 10
+
 
                 sys.stdout.flush()
 
@@ -63,6 +59,13 @@ def main():
 
                     speech_count = 0
                     chunks = []
+
+                    def get_response_from_ip():
+                        b = Bridge('192.168.1.64')
+                        response = b.get_sensor_objects('phue')
+                        return response
+
+
 
     except KeyboardInterrupt:
         pass

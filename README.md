@@ -2,7 +2,7 @@
 
 A voice activate artifact
 
-- x
+- change the brightness based on the length of the conversation
 - y
 - z
 
