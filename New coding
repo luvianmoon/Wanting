@@ -5,7 +5,6 @@ from mic_array import MicArray
 from pixel_ring import pixel_ring
 from phue import Bridge
 
-light = b.lights
 
 
 RATE = 16000
@@ -15,14 +14,18 @@ DOA_FRAMES = 200    # ms
 
 
 def main():
+  def get_response_from_ip():
+    b = Bridge('192.168.1.64')
+    response = b.get_sensor_objects('phue')
+    return response
 
-light[0].brightness = 200
-light[1].brightness = 0
+  lights = b.lights
+  lights[0].brightness = 200
+  lights[1].brightness = 0
 
   while True:
     vad = webrtcvad.Vad(3)
     speech_count = 0
-    A = speech_count
     chunks = []
     doa_chunks = int(DOA_FRAMES / VAD_FRAMES)
 
@@ -31,20 +34,20 @@ light[1].brightness = 0
             for chunk in mic.read_chunks():
                 # Use single channel audio to detect voice activity
                 if vad.is_speech(chunk[0::CHANNELS].tobytes(), RATE):
-                    //speech_count += 1
+                    speech_count += 1
                     sys.stdout.write('1')
-                    if light[1].brightness <= 200:
+                    if lights[1].brightness <= 200:
 
-                        print(light[0].brightness)
-                        light[0].brightness -= 10
-                        light[1].brightness += 10
+                        print(lights[0].brightness)
+                        lights[0].brightness -= 10
+                        lights[1].brightness += 10
 
 
                 else:
                     sys.stdout.write('0')
-                    if light[0].brightness <= 0:
-                        light[0].brightness += 10
-                        light[1].brightness -= 10
+                    if lights[0].brightness <= 0:
+                        lights[0].brightness += 10
+                        lights[1].brightness -= 10
 
 
                 sys.stdout.flush()
@@ -60,10 +63,6 @@ light[1].brightness = 0
                     speech_count = 0
                     chunks = []
 
-                    def get_response_from_ip():
-                        b = Bridge('192.168.1.64')
-                        response = b.get_sensor_objects('phue')
-                        return response
 
 
 
