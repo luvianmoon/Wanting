@@ -60,13 +60,13 @@ def main():
                             # sys.stdout.write ('2 inside if statement')
 
                             if lights[1].brightness <= 240:
-                                lights[0].brightness -= 10
-                                lights[1].brightness += 10
+                                lights[0].brightness -= 40
+                                lights[1].brightness += 40
                                 countratenumber = 0
                                 # sys.stdout.write (str(lights[1].saturation))
                                 if lights[1].saturation <= 254:
                                     # sys.stdout.write ('3 inside if statement')
-                                    lights[1].saturation += 10
+                                    lights[1].saturation += 30
                                     # sys.stdout.write ('4 inside if statement:',str(lights[1].saturation))
 
 
@@ -74,11 +74,11 @@ def main():
                         sys.stdout.write('0')
                         if countratenumber > 1000:
                             if lights[0].brightness <= 200:
-                                lights[0].brightness += 10
-                                lights[1].brightness -= 10
+                                lights[0].brightness += 30
+                                lights[1].brightness -= 30
                                 countratenumber = 0
                                 if lights[1].saturation >= 20:
-                                    lights[1].saturation -= 10
+                                    lights[1].saturation -= 30
 
                     sys.stdout.flush()
                     chunks.append(chunk)
