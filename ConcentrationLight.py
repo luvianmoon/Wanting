@@ -63,11 +63,11 @@ def main():
                                 # lights[0].brightness -= 10
                                 # lights[1].brightness += 10
                                 countratenumber = 0
-                                sys.stdout.write (lights[1].saturation)
+                                sys.stdout.write (str(lights[1].saturation))
                                 if lights[1].saturation <= 254:
                                     sys.stdout.write ('3 inside if statement')
                                     lights[1].saturation += 50
-                                    sys.stdout.write ('4 inside if statement:',lights[1].saturation)
+                                    sys.stdout.write ('4 inside if statement:',str(lights[1].saturation))
 
 
                     # else:
