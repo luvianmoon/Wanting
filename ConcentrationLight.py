@@ -10,7 +10,7 @@ import numpy as np
 from mic_array import MicArray
 from pixel_ring import pixel_ring
 from phue import Bridge
-import time
+
 #================================================================================
 # Mic Variables
 RATE = 16000
@@ -52,7 +52,7 @@ def main():
         try:
             with MicArray(RATE, CHANNELS, RATE * VAD_FRAMES / 1000)  as mic:
                 for chunk in mic.read_chunks():
-                    second += 1
+                    countratenumber += 1
                     # Use single channel audio to detect voice activity
                     if vad.is_speech(chunk[0::CHANNELS].tobytes(), RATE):
                         speech_count += 1
