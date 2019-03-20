@@ -52,22 +52,16 @@ def main():
             with MicArray(RATE, CHANNELS, RATE * VAD_FRAMES / 1000)  as mic:
                 for chunk in mic.read_chunks():
                     countratenumber += 1
-                    # Use single channel audio to detect voice activity
                     if vad.is_speech(chunk[0::CHANNELS].tobytes(), RATE):
                         speech_count += 1
                         sys.stdout.write('1')
                         if countratenumber > 1000:
-                            # sys.stdout.write ('2 inside if statement')
-
                             if lights[1].brightness <= 240:
                                 lights[0].brightness -= 40
                                 lights[1].brightness += 40
                                 countratenumber = 0
-                                # sys.stdout.write (str(lights[1].saturation))
                                 if lights[1].saturation <= 254:
-                                    # sys.stdout.write ('3 inside if statement')
                                     lights[1].saturation += 30
-                                    # sys.stdout.write ('4 inside if statement:',str(lights[1].saturation))
 
 
                     else:
