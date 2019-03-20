@@ -29,24 +29,23 @@ def get_response_from_ip(b):
 
 #================================================================================
 def main():
-    print ('hi')
-    """
-    b = Bridge('192.168.1.64')
-    get_response_from_ip(b)
-    lights = b.lights
-    lights[0].brightness = 200
 
-    for light in lights:
-        light
+    # b = Bridge('192.168.1.64')
+    # get_response_from_ip(b)
+    # lights = b.lights
+    # lights[0].brightness = 200
+    #
+    # for light in lights:
+    #     light
+    #
+    #
+    # lights[1].brightness = 0
+    # lights[0].hue = 33858
+    # lights[1].hue = 33858
+    # lights[1].hue = 65057
+    # lights[0].saturation = 44
+    # lights[1].saturation = 20
 
-
-    lights[1].brightness = 0
-    lights[0].hue = 33858
-    lights[1].hue = 33858
-    lights[1].hue = 65057
-    lights[0].saturation = 44
-    lights[1].saturation = 20
-    """
 
     while True:
         vad = webrtcvad.Vad(3)
