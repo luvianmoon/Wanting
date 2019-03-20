@@ -10,6 +10,7 @@ import numpy as np
 from mic_array import MicArray
 from pixel_ring import pixel_ring
 from phue import Bridge
+import time
 #================================================================================
 # Mic Variables
 RATE = 16000
@@ -55,21 +56,22 @@ def main():
                     if vad.is_speech(chunk[0::CHANNELS].tobytes(), RATE):
                         speech_count += 1
                         second += 1
-                        sys.stdout.write(str(speech_count))
+                        sys.stdout.write('1')
                         if second == 150:
                             if lights[1].brightness <= 200:
-                                second = 0
                                 lights[0].brightness -= 10
                                 lights[1].brightness += 10
                                 if lights[1].saturation <= 254:
                                     lights[1].saturation += 10
                     else:
                         sys.stdout.write('0')
-                        if lights[0].brightness <= 200:
-                            lights[0].brightness += 10
-                            lights[1].brightness -= 10
-                            if lights[1].saturation >= 20:
-                                lights[1].saturation -= 10
+                        if second == 150:
+                            if lights[0].brightness <= 200:
+                                lights[0].brightness += 10
+                                lights[1].brightness -= 10
+                                second = 0
+                                if lights[1].saturation >= 20:
+                                    lights[1].saturation -= 10
 
                     sys.stdout.flush()
 
