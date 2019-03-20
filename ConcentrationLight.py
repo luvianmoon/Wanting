@@ -60,7 +60,6 @@ def main():
                         if second == 200:
                             if lights[0].brightness >= 0:
                                 lights[0].brightness -= 100
-                                second = 0
                             # lights[0].brightness -= 10
                             # lights[1].brightness += 10
                             # lights[1].hue += 5
@@ -75,7 +74,7 @@ def main():
                             # if lights[1].saturation >= 20:
                             #     lights[1].hue -= 5
 
-                    # sys.stdout.flush()
+                    sys.stdout.flush()
 
                     chunks.append(chunk)
                     if len(chunks) == doa_chunks:
