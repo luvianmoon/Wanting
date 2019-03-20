@@ -34,7 +34,7 @@ def main():
     b = Bridge('192.168.1.64')
     get_response_from_ip(b)
     lights = b.lights
-    lights[0].brightness = 20
+    lights[0].brightness = 200
     lights[1].brightness = 0
     lights[0].hue = 33858
     lights[1].hue = 65057
