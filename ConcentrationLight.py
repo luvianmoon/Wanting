@@ -52,6 +52,7 @@ def main():
             with MicArray(RATE, CHANNELS, RATE * VAD_FRAMES / 1000)  as mic:
                 for chunk in mic.read_chunks():
                     countratenumber += 1
+                    print ('1')
                     # Use single channel audio to detect voice activity
                     if vad.is_speech(chunk[0::CHANNELS].tobytes(), RATE):
                         speech_count += 1
