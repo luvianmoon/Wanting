@@ -57,7 +57,7 @@ def main():
                         speech_count += 1
                         sys.stdout.write(str(countratenumber))
                         if countratenumber == 10:
-                            sys.stdout.write ('2')
+                            sys.stdout.write ('2 inside if statement')
 
                             if lights[1].brightness <= 200:
                                 # lights[0].brightness -= 10
@@ -65,9 +65,9 @@ def main():
                                 countratenumber = 0
                                 sys.stdout.write (lights[1].saturation)
                                 if lights[1].saturation <= 254:
-                                    sys.stdout.write ('3')
+                                    sys.stdout.write ('3 inside if statement')
                                     lights[1].saturation += 50
-                                    sys.stdout.write ('4',lights[1].saturation)
+                                    sys.stdout.write ('4 inside if statement:',lights[1].saturation)
 
 
                     # else:
