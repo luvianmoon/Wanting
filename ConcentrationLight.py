@@ -75,7 +75,6 @@ def main():
                     #                 lights[1].saturation -= 10
 
                     sys.stdout.flush()
-
                     chunks.append(chunk)
                     if len(chunks) == doa_chunks:
                         if speech_count > (doa_chunks / 2):
