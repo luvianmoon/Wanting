@@ -59,7 +59,7 @@ def main():
                             lights[0].brightness -= 5
                             lights[1].brightness += 10
                             lights[1].hue += 5
-                            if lights[1].saturation <= 254
+                            if lights[1].saturation <= 254:
                                 lights[1].hue -= 5
                     else:
                         sys.stdout.write('0')
