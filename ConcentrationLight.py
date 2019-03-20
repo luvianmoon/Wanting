@@ -75,7 +75,7 @@ def main():
                             # if lights[1].saturation >= 20:
                             #     lights[1].hue -= 5
 
-                    sys.stdout.flush()
+                    # sys.stdout.flush()
 
                     chunks.append(chunk)
                     if len(chunks) == doa_chunks:
