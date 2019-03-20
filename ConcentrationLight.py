@@ -70,7 +70,7 @@ def main():
                                 lights[1].brightness -= 100
                                 countratenumber = 0
                                 if lights[1].saturation >= 20:
-                                    lights[1].saturation -= 100
+                                    lights[1].saturation -= 10
 
                     sys.stdout.flush()
 
