@@ -49,7 +49,7 @@ def main():
         doa_chunks = int(DOA_FRAMES / VAD_FRAMES)
 
         try:
-            with MicArray(RATE, CHANNELS, RATE * VAD_FRAMES / 1)  as mic:
+            with MicArray(RATE, CHANNELS, RATE * VAD_FRAMES / 10)  as mic:
                 for chunk in mic.read_chunks():
                     # Use single channel audio to detect voice activity
                     if vad.is_speech(chunk[0::CHANNELS].tobytes(), RATE):
