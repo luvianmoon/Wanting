@@ -40,7 +40,7 @@ def main():
     lights[1].hue = 65057
     lights[0].saturation = 44
     lights[1].saturation = 20
-
+    current_brightness = lights[0].brightness
 
     while True:
         vad = webrtcvad.Vad(3)
@@ -55,9 +55,8 @@ def main():
                     if vad.is_speech(chunk[0::CHANNELS].tobytes(), RATE):
                         speech_count += 1
                         sys.stdout.write('1')
-                        if lights[0].brightness >= 5:
-                            pass
-                        else:
+                        if current_brightness >= 5:
+                            current_brightness -=5
                             lights[0].brightness -= 5
                             # lights[1].brightness += 10
                             # lights[1].hue += 5
@@ -65,7 +64,8 @@ def main():
                             #     lights[1].hue -= 5
                     else:
                         sys.stdout.write('0')
-                        if lights[0].brightness <= 200:
+                        if current_brightness <= 200:
+                            current_brightness +=1
                             lights[0].brightness += 1
                             # lights[1].brightness -= 1
                             # if lights[1].saturation >= 20:
