@@ -56,24 +56,20 @@ def main():
                         speech_count += 1
                         second += 1
                         # sys.stdout.write(str(speech_count))
-                        print (second)
                         if second == 150:
-                            if lights[0].brightness >= 0:
-                                lights[0].brightness -= 100
+                            if lights[1].brightness <= 200:
                                 second = 0
-                            # lights[0].brightness -= 10
-                            # lights[1].brightness += 10
-                            # lights[1].hue += 5
-                            # if lights[1].saturation <= 254:
-                            #     lights[1].hue -= 5
+                                lights[0].brightness -= 10
+                                lights[1].brightness += 10
+                                if lights[1].saturation <= 254:
+                                    lights[1].saturation += 10
                     else:
                         sys.stdout.write('0')
-                        # if lights[0].brightness <= 200:
-                            # lights[0].brightness +=1
-                            # lights[0].brightness += 1
-                            # lights[1].brightness -= 1
-                            # if lights[1].saturation >= 20:
-                            #     lights[1].hue -= 5
+                        if lights[0].brightness <= 200:
+                            lights[0].brightness += 10
+                            lights[1].brightness -= 10
+                            if lights[1].saturation >= 20:
+                                lights[1].saturation -= 10
 
                     sys.stdout.flush()
 
@@ -81,10 +77,6 @@ def main():
                     if len(chunks) == doa_chunks:
                         if speech_count > (doa_chunks / 2):
                             pass
-                            # frames = np.concatenate(chunks)
-                            # direction = mic.get_direction(frames)
-                            # pixel_ring.set_direction(direction)
-                            #print('\n{}'.format(int(direction)))
 
                         speech_count = 0
                         chunks = []
