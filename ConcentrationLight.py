@@ -29,7 +29,7 @@ def get_response_from_ip(b):
 
 #================================================================================
 def main():
-    print("hello/n")
+    print ('hi')
     """
     b = Bridge('192.168.1.64')
     get_response_from_ip(b)
