@@ -1,7 +1,7 @@
 # Workflow
 # write script on macbook
 #save it with command+s
-# stage
+# crlck stage
 # commit
 # push
 
