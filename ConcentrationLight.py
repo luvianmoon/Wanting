@@ -61,6 +61,7 @@ def main():
                                 lights[0].brightness -= 100
                                 lights[1].brightness += 100
                                 if lights[1].saturation <= 254:
+                                    print (lights[1].saturation)
                                     lights[1].saturation += 100
                     else:
                         sys.stdout.write('0')
