@@ -56,7 +56,7 @@ def main():
                         speech_count += 1
                         second += 1
                         sys.stdout.write(str(speech_count))
-                        if second = 24
+                        if second == 24
                             if lights[0].brightness >= 200:
                                 lights[0].brightness -= 10
                             # lights[0].brightness -= 10
