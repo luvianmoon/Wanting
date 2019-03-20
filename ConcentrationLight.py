@@ -1,8 +1,8 @@
 #================================================================================
-# Script Name:
+# Script Name: Concentration & light
 # by Wanting
 
-# Description: it does this x x x x x
+# Description: The project is about using respeaker to recognize human voice and use color and brightness to present it. When speech was detected, light 1 will go dark while the lught 2 burn bright at the same time. Light 2 will also turn into red color which will make people feel uncomfortable.
 #================================================================================
 import sys
 import webrtcvad
