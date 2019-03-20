@@ -37,7 +37,6 @@ def main():
     lights[0].brightness = 200
     lights[1].brightness = 0
     lights[0].hue = 33858
-    lights[1].hue = 33858
     lights[1].hue = 65057
     lights[0].saturation = 44
     lights[1].saturation = 20
