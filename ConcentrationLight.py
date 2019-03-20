@@ -34,12 +34,12 @@ def main():
     b = Bridge('192.168.1.64')
     get_response_from_ip(b)
     lights = b.lights
-    lights[0].brightness = 200
+    lights[0].brightness = 20
     lights[1].brightness = 0
     lights[0].hue = 33858
     lights[1].hue = 65057
     lights[0].saturation = 44
-    lights[1].saturation = 20
+    lights[1].saturation = 10
     countratenumber = 0
 
     while True:
@@ -59,7 +59,7 @@ def main():
                         if countratenumber > 1000:
                             # sys.stdout.write ('2 inside if statement')
 
-                            if lights[1].brightness <= 200:
+                            if lights[1].brightness <= 240:
                                 lights[0].brightness -= 10
                                 lights[1].brightness += 10
                                 countratenumber = 0
