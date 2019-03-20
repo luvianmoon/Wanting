@@ -63,8 +63,9 @@ def main():
                                 countratenumber = 0
                                 print (lights[1].saturation)
                                 if lights[1].saturation <= 254:
+                                    print ('1')
                                     # lights[1].saturation += 50
-                                
+
 
                     # else:
                     #     sys.stdout.write('0')
