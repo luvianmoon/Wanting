@@ -41,7 +41,7 @@ def main():
     lights[1].hue = 65057
     lights[0].saturation = 44
     lights[1].saturation = 20
-    second = 0
+    countratenumber = 0
 
     while True:
         vad = webrtcvad.Vad(3)
@@ -52,24 +52,24 @@ def main():
         try:
             with MicArray(RATE, CHANNELS, RATE * VAD_FRAMES / 1000)  as mic:
                 for chunk in mic.read_chunks():
+                    second += 1
                     # Use single channel audio to detect voice activity
                     if vad.is_speech(chunk[0::CHANNELS].tobytes(), RATE):
                         speech_count += 1
-                        second += 1
-                        sys.stdout.write('1')
-                        if second == 150:
+                        # sys.stdout.write('1')
+                        if countratenumber == 150:
                             if lights[1].brightness <= 200:
                                 lights[0].brightness -= 10
                                 lights[1].brightness += 10
                                 if lights[1].saturation <= 254:
                                     lights[1].saturation += 10
                     else:
-                        sys.stdout.write('0')
-                        if second == 150:
+                        # sys.stdout.write('0')
+                        if countratenumber == 150:
                             if lights[0].brightness <= 200:
                                 lights[0].brightness += 10
                                 lights[1].brightness -= 10
-                                second = 0
+                                countratenumber = 0
                                 if lights[1].saturation >= 20:
                                     lights[1].saturation -= 10
 
