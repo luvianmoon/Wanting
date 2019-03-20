@@ -54,7 +54,7 @@ def main():
                     # Use single channel audio to detect voice activity
                     if vad.is_speech(chunk[0::CHANNELS].tobytes(), RATE):
                         speech_count += 1
-                        sys.stdout.write('1')
+                        sys.stdout.write(speech_count)
                         if current_brightness >= 5:
                             current_brightness -=5
                             lights[0].brightness -= 5
@@ -73,19 +73,17 @@ def main():
 
                     sys.stdout.flush()
 
-                    #chunks.append(chunk)
-                    #if len(chunks) == doa_chunks:
-                        #if speech_count > (doa_chunks / 2):
-                            #frames = np.concatenate(chunks)
-                            #direction = mic.get_direction(frames)
-                            #pixel_ring.set_direction(direction)
+                    chunks.append(chunk)
+                    if len(chunks) == doa_chunks:
+                        if speech_count > (doa_chunks / 2):
+                            pass
+                            # frames = np.concatenate(chunks)
+                            # direction = mic.get_direction(frames)
+                            # pixel_ring.set_direction(direction)
                             #print('\n{}'.format(int(direction)))
 
-                        #speech_count = 0
-                        #chunks = []
-
-
-
+                        speech_count = 0
+                        chunks = []
 
         except KeyboardInterrupt:
             pass
