@@ -74,4 +74,7 @@ reboot
 #run mic_array
 cd mic_array/
 python vad_doa.py
+
+# send files between pi and macbook
+scp send file
 ```

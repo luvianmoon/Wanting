@@ -40,7 +40,7 @@ def main():
     lights[1].hue = 65057
     lights[0].saturation = 44
     lights[1].saturation = 20
-    current_brightness = lights[0].brightness
+    second = 0
 
     while True:
         vad = webrtcvad.Vad(3)
@@ -49,24 +49,26 @@ def main():
         doa_chunks = int(DOA_FRAMES / VAD_FRAMES)
 
         try:
-            with MicArray(RATE, CHANNELS, RATE * VAD_FRAMES / 1000)  as mic:
+            with MicArray(RATE, CHANNELS, RATE * VAD_FRAMES / 1)  as mic:
                 for chunk in mic.read_chunks():
                     # Use single channel audio to detect voice activity
                     if vad.is_speech(chunk[0::CHANNELS].tobytes(), RATE):
                         speech_count += 1
+                        # second += 1
                         sys.stdout.write(str(speech_count))
-                        if current_brightness >= 5:
-                            current_brightness -=5
-                            lights[0].brightness -= 5
+                        # if second = 24
+                        # if lights[0].brightness >= 5:
+                            # lights[0].brightness -=5
+                            # lights[0].brightness -= 5
                             # lights[1].brightness += 10
                             # lights[1].hue += 5
                             # if lights[1].saturation <= 254:
                             #     lights[1].hue -= 5
                     else:
                         sys.stdout.write('0')
-                        if current_brightness <= 200:
-                            current_brightness +=1
-                            lights[0].brightness += 1
+                        # if lights[0].brightness <= 200:
+                            # lights[0].brightness +=1
+                            # lights[0].brightness += 1
                             # lights[1].brightness -= 1
                             # if lights[1].saturation >= 20:
                             #     lights[1].hue -= 5
