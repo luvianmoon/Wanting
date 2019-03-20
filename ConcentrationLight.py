@@ -58,12 +58,12 @@ def main():
                         sys.stdout.write('1')
                         if countratenumber == 150:
                             if lights[1].brightness <= 200:
-                                print ('1')
-                                # lights[0].brightness -= 10
-                                # lights[1].brightness += 10
-                                # countratenumber = 0
-                                # if lights[1].saturation <= 254:
-                                #     lights[1].saturation += 50
+                                lights[0].brightness -= 10
+                                lights[1].brightness += 10
+                                countratenumber = 0
+                                if lights[1].saturation <= 254:
+                                    print ('1')
+                                    lights[1].saturation += 50
                     # else:
                     #     sys.stdout.write('0')
                     #     if countratenumber == 150:
