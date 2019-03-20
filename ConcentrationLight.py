@@ -54,8 +54,8 @@ def main():
                     countratenumber += 1
                     # Use single channel audio to detect voice activity
                     if vad.is_speech(chunk[0::CHANNELS].tobytes(), RATE):
-                        speech_count += 1
                         print ('1')
+                        speech_count += 1
                         # sys.stdout.write('1')
                         if countratenumber == 150:
                         #     if lights[1].brightness <= 200:
