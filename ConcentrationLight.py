@@ -56,7 +56,7 @@ def main():
                     if vad.is_speech(chunk[0::CHANNELS].tobytes(), RATE):
                         speech_count += 1
                         sys.stdout.write(str(countratenumber))
-                        if countratenumber == 10:
+                        if countratenumber > 10:
                             sys.stdout.write ('2 inside if statement')
 
                             if lights[1].brightness <= 200:
