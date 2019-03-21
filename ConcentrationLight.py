@@ -10,6 +10,7 @@ import numpy as np
 from mic_array import MicArray
 from pixel_ring import pixel_ring
 from phue import Bridge
+import phue
 import time
 import os
 
@@ -34,7 +35,7 @@ def main():
     b = Bridge('192.168.1.64')
     try:
         get_response_from_ip(b)
-    except PhueRequestTimeout as e:
+    except phue.PhueRequestTimeout as e:
         time.sleep(3)
         os.execv(sys.executable, ['ConcentrationLight.py'] + sys.argv)
         exit()
@@ -93,7 +94,7 @@ def main():
 
         except KeyboardInterrupt:
             pass
-        
+
         # except PhueRequestTimeout:
         #     time.sleep(3)
         #     os.execv(sys.executable, ['ConcentrationLight.py'] + sys.argv)
