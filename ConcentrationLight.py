@@ -11,6 +11,7 @@ from mic_array import MicArray
 from pixel_ring import pixel_ring
 from phue import Bridge
 import time
+import os
 import sys
 
 #================================================================================
@@ -91,10 +92,9 @@ def main():
         except KeyboardInterrupt:
             pass
 
-        except PhueRequestTimeout:
+    except phue.PhueRequestTimeout:
             time.sleep(3)
-            os.execl(sys.executable, sys.executable, * sys.argv)
-
+            os.execv(sys.executable, ['ConcentrationLight.py'] + sys.argv)
 
     pixel_ring.off()
 
