@@ -60,18 +60,19 @@ def main():
                                 lights[0].brightness -= 40
                                 lights[1].brightness += 40
                                 countratenumber = 0
+                                print ('lightis' + str(lights[1].saturation))
                                 if lights[1].saturation <= 254:
                                     lights[1].saturation += 30
 
 
                     else:
                         sys.stdout.write('0')
-                        print ('lightis' + str(lights[1].saturation))
                         if countratenumber > 1000:
                             if lights[0].brightness <= 200:
                                 lights[0].brightness += 30
                                 lights[1].brightness -= 30
                                 countratenumber = 0
+                                print ('lightis' + str(lights[1].saturation))
                                 if lights[1].saturation >= 20:
                                     lights[1].saturation -= 30
 
