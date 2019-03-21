@@ -73,6 +73,7 @@ def main():
                                 countratenumber = 0
                                 if lights[1].saturation >= 20:
                                     lights[1].saturation -= 30
+                                    print (lights[1].saturation)
 
                     sys.stdout.flush()
                     chunks.append(chunk)
