@@ -26,7 +26,7 @@ DOA_FRAMES = 200    # ms
 #================================================================================
 
 def get_response_from_ip(b):
-    response = b.get_sensor_objects(phue)
+    response = b.get_sensor_objects('phue')
     return response
 
 #================================================================================
