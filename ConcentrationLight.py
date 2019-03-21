@@ -10,6 +10,7 @@ import numpy as np
 from mic_array import MicArray
 from pixel_ring import pixel_ring
 from phue import Bridge
+import time
 
 #================================================================================
 # Mic Variables
@@ -88,6 +89,10 @@ def main():
 
         except KeyboardInterrupt:
             pass
+
+        except PhueRequestTimeout:
+            time.sleep(3)
+            os.execv('ConcentrationLight.py', lst_args)
 
     pixel_ring.off()
 
