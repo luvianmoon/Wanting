@@ -30,10 +30,6 @@ def get_response_from_ip(b):
     response = b.get_sensor_objects('phue')
     return response
 
-def get_response_from_ip(b):
-    response = b.get_sensor_objects('phue')
-    return response
-
 #================================================================================
 def main():
 
