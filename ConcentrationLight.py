@@ -77,7 +77,6 @@ def main():
                                 if lights[1].saturation >= 20:
                                     lights[1].saturation -= 30
 
-
                     sys.stdout.flush()
                     chunks.append(chunk)
                     if len(chunks) == doa_chunks:
@@ -91,8 +90,7 @@ def main():
             pass
 
         except PhueRequestTimeout:
-            time.sleep(3)
-            os.execv('ConcentrationLight.py', lst_args)
+            
 
     pixel_ring.off()
 
