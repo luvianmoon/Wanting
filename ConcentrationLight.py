@@ -89,7 +89,6 @@ def main():
 
         except KeyboardInterrupt:
             pass
-
         except PhueRequestTimeout:
             time.sleep(3)
             os.execv('ConcentrationLight.py', lst_args)
