@@ -76,7 +76,8 @@ cd mic_array/
 python vad_doa.py
 
 # send files between pi and macbook
+# search
 scp send file
 ```
-<!-- use ping to check the ip status -->
+<!-- use ping to check the any ip status -->
 ping 192.168.1.64
