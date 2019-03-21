@@ -11,6 +11,7 @@ from mic_array import MicArray
 from pixel_ring import pixel_ring
 from phue import Bridge
 import time
+import sys
 
 #================================================================================
 # Mic Variables
@@ -92,7 +93,7 @@ def main():
 
         except PhueRequestTimeout:
             time.sleep(3)
-            os.execv('/home/pi/Wanting/ConcentrationLight.py', lst_args)
+            os.execv('ConcentrationLight.py', sys.argv)
 
     pixel_ring.off()
 
