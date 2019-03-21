@@ -66,6 +66,7 @@ def main():
 
                     else:
                         sys.stdout.write('0')
+                        print ('lightis' + lights[1].saturation)
                         if countratenumber > 1000:
                             if lights[0].brightness <= 200:
                                 lights[0].brightness += 30
@@ -78,7 +79,6 @@ def main():
                     sys.stdout.flush()
                     chunks.append(chunk)
                     if len(chunks) == doa_chunks:
-                        print (lights[1].saturation)
                         if speech_count > (doa_chunks / 2):
                             pass
 
