@@ -93,7 +93,8 @@ def main():
 
         except PhueRequestTimeout:
             time.sleep(3)
-            os.execv('ConcentrationLight.py', sys.argv)
+            os.execl(sys.executable, sys.executable, * sys.argv)
+
 
     pixel_ring.off()
 
