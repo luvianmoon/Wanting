@@ -78,3 +78,5 @@ python vad_doa.py
 # send files between pi and macbook
 scp send file
 ```
+<!-- use ping to check the ip status -->
+ping 192.168.1.64
