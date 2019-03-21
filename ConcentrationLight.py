@@ -31,9 +31,13 @@ def get_response_from_ip(b):
 
 #================================================================================
 def main():
-
     b = Bridge('192.168.1.64')
-    get_response_from_ip(b)
+    try:
+        get_response_from_ip(b)
+    except PhueRequestTimeout as e:
+        time.sleep(3)
+        os.execv(sys.executable, ['ConcentrationLight.py'] + sys.argv)
+        exit()
     lights = b.lights
     lights[0].brightness = 200
     lights[1].brightness = 0
@@ -89,6 +93,10 @@ def main():
 
         except KeyboardInterrupt:
             pass
+        
+        # except PhueRequestTimeout:
+        #     time.sleep(3)
+        #     os.execv(sys.executable, ['ConcentrationLight.py'] + sys.argv)
 
     pixel_ring.off()
 
