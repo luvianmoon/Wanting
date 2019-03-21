@@ -12,7 +12,6 @@ from pixel_ring import pixel_ring
 from phue import Bridge
 import phue
 import time
-import os
 
 #================================================================================
 # Mic Variables
@@ -20,12 +19,9 @@ RATE = 16000
 CHANNELS = 4
 VAD_FRAMES = 10     # ms
 DOA_FRAMES = 200    # ms
-#================================================================================
-# Hue Variables
-
 
 #================================================================================
-
+# Connect to bridge
 def get_response_from_ip(b):
     response = b.get_sensor_objects('phue')
     return response
@@ -39,6 +35,8 @@ def main():
         except phue.PhueRequestTimeout:
             time.sleep(3)
             continue
+#================================================================================
+# Hue Variables
         lights = b.lights
         lights[0].brightness = 200
         lights[1].brightness = 0
@@ -47,6 +45,7 @@ def main():
         lights[0].saturation = 44
         lights[1].saturation = 10
         countratenumber = 0
+#================================================================================
 
         while True:
             vad = webrtcvad.Vad(3)
@@ -94,10 +93,6 @@ def main():
 
             except KeyboardInterrupt:
                 pass
-
-            # except PhueRequestTimeout:
-            #     time.sleep(3)
-            #     os.execv(sys.executable, ['ConcentrationLight.py'] + sys.argv)
 
         pixel_ring.off()
 

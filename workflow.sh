@@ -34,3 +34,6 @@ Name=Clock
 Exec=x-terminal-emulator -e python2 /home/pi/Wanting/ConcentrationLight.py
 # above code ask pi to open terminal and run
 # save & exit
+
+PhueRequestTimeout Error
+# can due to send command right after changing the internet. just need to wait for a few sec
