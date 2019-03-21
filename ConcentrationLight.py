@@ -73,11 +73,12 @@ def main():
                                 countratenumber = 0
                                 if lights[1].saturation >= 20:
                                     lights[1].saturation -= 30
-                                    print (lights[1].saturation)
+
 
                     sys.stdout.flush()
                     chunks.append(chunk)
                     if len(chunks) == doa_chunks:
+                        print (lights[1].saturation)
                         if speech_count > (doa_chunks / 2):
                             pass
 
