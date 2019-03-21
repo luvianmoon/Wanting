@@ -89,9 +89,10 @@ def main():
 
         except KeyboardInterrupt:
             pass
+
         except PhueRequestTimeout:
             time.sleep(3)
-            os.execv('ConcentrationLight.py', lst_args)
+            os.execv('/home/pi/Wanting/ConcentrationLight.py', lst_args)
 
     pixel_ring.off()
 
