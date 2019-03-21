@@ -12,7 +12,6 @@ from pixel_ring import pixel_ring
 from phue import Bridge
 import time
 import os
-import sys
 
 #================================================================================
 # Mic Variables
@@ -27,7 +26,7 @@ DOA_FRAMES = 200    # ms
 #================================================================================
 
 def get_response_from_ip(b):
-    response = b.get_sensor_objects('phue')
+    response = b.get_sensor_objects(phue)
     return response
 
 #================================================================================
@@ -91,9 +90,9 @@ def main():
         except KeyboardInterrupt:
             pass
 
-        except phue.PhueRequestTimeout:
-            time.sleep(3)
-            os.execv(sys.executable, ['ConcentrationLight.py'] + sys.argv)
+        # except phue.PhueRequestTimeout:
+        #     time.sleep(3)
+        #     os.execv(sys.executable, ['ConcentrationLight.py'] + sys.argv)
 
     pixel_ring.off()
 
