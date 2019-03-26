@@ -8,7 +8,6 @@ import sys
 import webrtcvad
 import numpy as np
 from mic_array import MicArray
-from pixel_ring import pixel_ring
 from phue import Bridge
 import phue
 import time
